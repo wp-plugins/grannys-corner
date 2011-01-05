@@ -45,12 +45,14 @@ class GrannysCorner extends WP_Widget {
 		
 		if ($itsme && !$updated) {
 			$widget_content = '<form action="'.get_option('siteurl').'" method="post" >';
-			$widget_content .= '<textarea name="grc-'.$instance['user'].'" style="width:95%; height:250px;">'.$the_text.'</textarea>';
-			$widget_content .= '<input type="submit" class="button-primary" name="grc-submit" value="'.__('Save Changes', 'grc').'" />';
+			$widget_content .= '<textarea name="grc-'.$instance['user'].'" id="grc-'.$instance['user'].'" style="width:95%; height:250px;"></textarea>';
+			$widget_content .= '<input type="submit" class="button-primary" name="grc-submit" value="'.__('Save', 'grc').'" />';
+			$widget_content .= '<input type="reset" class="button-primary" name="grc-reset" value="'.__('Clear', 'grc').'" />';
 			$widget_content .= '</form>';
+			$widget_content .= '<script type="text/javascript">elm=document.getElementById("grc-'.$instance['user'].'");elm.value = "'.esc_js($the_text).'";</script>';
 		}
 		else {
-			$widget_content = get_option('grannys-corner-'.$instance['user']);
+			$widget_content = $the_text;
 		}
 
 		echo $before_widget . $before_title . $title . $after_title . $widget_content . $after_widget;
@@ -81,7 +83,7 @@ class GrannysCorner extends WP_Widget {
 			<label for="<?php echo $this->get_field_id('user'); ?>"><?php _e( 'User:', 'grc' ); ?></label>	
 			<select name="<?php echo $this->get_field_name('user'); ?>" id="<?php echo $this->get_field_id('user'); ?>" class="widefat">
 <?php
-			$this->user_select();
+			$this->user_select($user);
 ?>
 			</select>
 		</p>

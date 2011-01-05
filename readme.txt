@@ -2,7 +2,7 @@
 Contributors: opajaap
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=OpaJaap@OpaJaap.nl&item_name=Grannys-Corner&item_number=Support-Open-Source&currency_code=USD&lc=US
 Tags: textwidget, widget
-Version: 1.0
+Version: 1.1
 Stable tag: trunk
 Author: J.N. Breetvelt
 Author URI: http://www.opajaap.nl/
@@ -40,6 +40,11 @@ grc-[your languagecode].po and grc-[your languagecode].mo.
 WordPress developers Codex page and more specifically at the section about themes and plugins.
 
 == Changelog ==
+
+= 1.1 =
+
+* Clear button added.
+* Changing the widget settings now rememberes the owner.
 
 = 1.0 = 
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-03 11:01+0100\n"
-"PO-Revision-Date: 2011-01-03 11:13+0100\n"
+"POT-Creation-Date: 2011-01-04 16:54+0100\n"
+"PO-Revision-Date: 2011-01-04 16:54+0100\n"
 "Last-Translator: J.N. Breetvelt <OpaJaap@OpaJaap.nl>\n"
 "Language-Team: OpaJaap <OpaJaap@OpaJaap.nl>\n"
 "MIME-Version: 1.0\n"
@@ -28,14 +28,18 @@ msgid "Granny's Corner"
 msgstr ""
 
 #: grannys-corner.php:49
-msgid "Save Changes"
+msgid "Save"
 msgstr ""
 
-#: grannys-corner.php:77
+#: grannys-corner.php:50
+msgid "Clear"
+msgstr ""
+
+#: grannys-corner.php:79
 msgid "Title:"
 msgstr ""
 
-#: grannys-corner.php:81
+#: grannys-corner.php:83
 msgid "User:"
 msgstr ""
 
