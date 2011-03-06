@@ -1,8 +1,8 @@
 === Grannys Corner ===
 Contributors: opajaap
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=OpaJaap@OpaJaap.nl&item_name=Grannys-Corner&item_number=Support-Open-Source&currency_code=USD&lc=US
-Tags: textwidget, widget
-Version: 1.2
+Tags: textwidget, widget, qTranslate
+Version: 1.3
 Stable tag: trunk
 Author: J.N. Breetvelt
 Author URI: http://www.opajaap.nl/
@@ -22,6 +22,7 @@ When he presses the save button, he will see the final result.
 If he/she wants to change the content, the page needs to be re-opened by the logged in user.
 Multiple instances of the widget can be activated and owned by different users.
 The plugin can be translated. Dutch language files are included.
+The plugin supports qTranslate.
 
 == Installation ==
 
@@ -40,6 +41,10 @@ grc-[your languagecode].po and grc-[your languagecode].mo.
 WordPress developers Codex page and more specifically at the section about themes and plugins.
 
 == Changelog ==
+
+= 1.3 =
+
+* Grannys corner now supports qTranslate.
 
 = 1.2 =
 

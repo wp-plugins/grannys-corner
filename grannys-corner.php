@@ -2,7 +2,7 @@
 /*
 Plugin Name: Grannys corner
 Description: Text widget for Granny's column
-Version: 1.2
+Version: 1.3
 Author: J.N. Breetvelt a.k.a OpaJaap
 Author URI: http://www.opajaap.nl/
 Plugin URI: http://wordpress.org/extend/plugins/grannys-corner
@@ -59,6 +59,10 @@ class GrannysCorner extends WP_Widget {
 		}
 		else {
 			$widget_content = $the_text;
+			if(function_exists('qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage')) {
+				$the_text = qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage($the_text);
+			}
+
 		}
 
 		echo $before_widget . $before_title . $title . $after_title . $widget_content . $after_widget;
