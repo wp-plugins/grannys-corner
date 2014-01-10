@@ -44,7 +44,7 @@ WordPress developers Codex page and more specifically at the section about theme
 
 = 1.4 =
 
-* Tested on wp 3.8
+* Tested on wp 3.8 
 
 = 1.3 =
 
