@@ -2,12 +2,12 @@
 Contributors: opajaap
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=OpaJaap@OpaJaap.nl&item_name=Grannys-Corner&item_number=Support-Open-Source&currency_code=USD&lc=US
 Tags: textwidget, widget, qTranslate
-Version: 1.3
+Version: 1.4
 Stable tag: trunk
 Author: J.N. Breetvelt
 Author URI: http://www.opajaap.nl/
 Requires at least: 2.8
-Tested up to: 3.0.4
+Tested up to: 3.8
 
 This plugin is designed to easily enter a text in a widget for a specific user without the need to enter the admin screen.
 
@@ -41,6 +41,10 @@ grc-[your languagecode].po and grc-[your languagecode].mo.
 WordPress developers Codex page and more specifically at the section about themes and plugins.
 
 == Changelog ==
+
+= 1.4 =
+
+* Tested on wp 3.8
 
 = 1.3 =
 
