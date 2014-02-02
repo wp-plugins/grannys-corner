@@ -2,7 +2,7 @@
 /*
 Plugin Name: Grannys corner
 Description: Text widget for Granny's column
-Version: 1.4
+Version: 1.5
 Author: J.N. Breetvelt a.k.a OpaJaap
 Author URI: http://www.opajaap.nl/
 Plugin URI: http://wordpress.org/extend/plugins/grannys-corner
@@ -33,35 +33,28 @@ class GrannysCorner extends WP_Widget {
 		}
 		else $itsme = false;
 
+		$widget_option = $this->get_widget_option( $instance['user'] );
+		
 		$updated = false;
 		if ($itsme) {
-		// For some strange reason this form does not send the $_POST variables om some installations
-		// Therefor we use the get-method, that works on both my sites
-//echo('Itsme=true<br/>');
-//print_r($_GET);
-			if (isset($_GET['grc-text'])) {
-//echo('Updating name='.'grannys-corner-'.$instance['user'].'<br/>Value='.htmlspecialchars($_GET['grc-text']).'<br/>');
-				update_option('grannys-corner-'.$instance['user'], htmlspecialchars($_GET['grc-text']));
-//echo('Retrieved:'.get_option('grannys-corner-'.$instance['user']));
+			if (isset($_GET['grc-txt-'.$this->get_widget_id()])) {
+				update_option( $widget_option, strip_tags( html_entity_decode( $_GET['grc-txt-'.$this->get_widget_id()] ), '<a><b><br><i><span>' ) );
 				$updated = true;
 			}
 		}
 
-		$the_text = stripslashes(get_option('grannys-corner-'.$instance['user']));
+		$the_text = stripslashes( get_option( $widget_option ) );
 		
 		if ($itsme && !$updated) {
 			$widget_content = '<form action="'.get_option('siteurl').'" method="get" >';
-			$widget_content .= '<textarea name="grc-text" id="grc-text" style="width:95%; height:250px;"></textarea>';
+			$widget_content .= '<textarea name="grc-txt-'.$this->get_widget_id().'" id="grc-text" style="width:95%; height:250px;">'.$the_text.'</textarea>';
 			$widget_content .= '<input type="submit" class="button-primary" name="grc-submit" value="'.__('Save', 'grc').'" />';
-			$widget_content .= '<input type="reset" class="button-primary" name="grc-reset" value="'.__('Clear', 'grc').'" />';
+			$widget_content .= '<input type="reset" onclick="document.getElementById(\'grc-text\').innerHTML=\'\'" class="button-primary" name="grc-reset" value="'.__('Clear', 'grc').'" />';
 			$widget_content .= '</form>';
-			$widget_content .= '<script type="text/javascript">elm=document.getElementById("grc-text");elm.value = "'.esc_js($the_text).'";</script>';
+//			$widget_content .= '<script type="text/javascript">elm=document.getElementById("grc-text");elm.value = "'.esc_js($the_text).'";</script>';
 		}
 		else {
-			$widget_content = $the_text;
-			if(function_exists('qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage')) {
-				$the_text = qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage($the_text);
-			}
+			$widget_content = '<style>p{margin:12px 0 0 0;}</style>'.wpautop(__($the_text));
 
 		}
 
@@ -125,6 +118,16 @@ class GrannysCorner extends WP_Widget {
 		echo ($result);
 	}
 	
+	function get_widget_id() {
+		$widgetid = substr( $this->get_field_name( 'txt' ), strpos( $this->get_field_name( 'txt' ), '[' ) + 1 );
+		$widgetid = substr( $widgetid, 0, strpos( $widgetid, ']' ) );
+		return $widgetid;
+	}
+	
+	function get_widget_option($user) {
+		$widgetid = $this->get_widget_id();
+		return 'grannys-corner-'.$user.'-'.$widgetid;
+	}
 } // class GrannysCorner
 
 // register GrannysCorner widget
