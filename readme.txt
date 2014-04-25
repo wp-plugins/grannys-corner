@@ -7,7 +7,7 @@ Stable tag: trunk
 Author: J.N. Breetvelt
 Author URI: http://www.opajaap.nl/
 Requires at least: 2.8
-Tested up to: 3.8.1
+Tested up to: 3.9
 
 This plugin is designed to easily enter a text in a widget for a specific user without the need to enter the admin screen.
 
