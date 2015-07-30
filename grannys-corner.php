@@ -2,7 +2,7 @@
 /*
 Plugin Name: Grannys corner
 Description: Text widget for Granny's column
-Version: 1.5
+Version: 1.6
 Author: J.N. Breetvelt a.k.a OpaJaap
 Author URI: http://www.opajaap.nl/
 Plugin URI: http://wordpress.org/extend/plugins/grannys-corner
@@ -13,11 +13,11 @@ load_plugin_textdomain('grc', 'wp-content/plugins/grannys-corner/langs/', 'grann
  * GrannysCorner Class
  */
 class GrannysCorner extends WP_Widget {
+
     /** constructor */
-    function GrannysCorner() {
-        parent::WP_Widget(false, $name = 'Granny\'s Corner Widget');	
-		$widget_ops = array('classname' => 'widget_grannys_corner', 'description' => __( 'Granny\'s column text widget', 'grc') );	//
-		$this->WP_Widget('grannys_corner', __('Granny\'s Corner', 'grc'), $widget_ops);															//
+    function __construct() {
+		$widget_ops = array( 'classname' => 'widget_grannys_corner', 'description' => __( 'Granny\'s column text widget', 'grc') );	
+		parent::__construct( 'grannys_corner', __( 'Granny\'s Corner', 'grc' ), $widget_ops );
     }
 
 	/** @see WP_Widget::widget */

@@ -2,7 +2,7 @@
 Contributors: opajaap
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=OpaJaap@OpaJaap.nl&item_name=Grannys-Corner&item_number=Support-Open-Source&currency_code=USD&lc=US
 Tags: textwidget, widget, qTranslate
-Version: 1.5
+Version: 1.6
 Stable tag: trunk
 Author: J.N. Breetvelt
 Author URI: http://www.opajaap.nl/
@@ -41,6 +41,10 @@ grc-[your languagecode].po and grc-[your languagecode].mo.
 WordPress developers Codex page and more specifically at the section about themes and plugins.
 
 == Changelog ==
+
+= 1.6 =
+
+* Changed class definitions to be compat with php5.
 
 = 1.5 =
 
